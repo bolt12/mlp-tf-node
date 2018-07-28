@@ -20,7 +20,7 @@ set:
 - the loss function
 */
 
-class MLPerceptron {
+module.exports = class MLPerceptron {
   constructor(inputs, targets, hidden, training, hfunction, outfunction, lossfunction, learningRate) {
     this.hidden_function = typeof hfunction !== 'undefined' ? hfunction : 'sigmoid';
     this.output_function = typeof outfunction !== 'undefined' ? outfunction : 'linear';
@@ -159,13 +159,3 @@ class MLPerceptron {
     return cm.toTensor();
   }
 }
-
-const p = new MLPerceptron([[0], [1], [2], [3], [4]], [[1, 2, 3, 4, 5]], 5, 'sgd', 'sigmoid', 'linear', 'meanSquaredError', 0.25);
-p.earlyStoppingTraining(2000, 0.000001, 0).then( (h) => {
-  
-  p.predict([[0]]);
-  p.predict([[1]]);
-  p.predict([[2]]);
-  p.predict([[3]]);
-  p.predict([[4]]);
-});
