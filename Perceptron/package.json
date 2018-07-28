@@ -1,0 +1,15 @@
+{
+  "name": "perceptron",
+  "version": "1.0.0",
+  "description": "Simple Perceptron JS Library with Tensorflow JS",
+  "main": "perceptron.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armando Santos",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.12.3",
+    "@tensorflow/tfjs-node": "^0.1.9"
+  }
+}
