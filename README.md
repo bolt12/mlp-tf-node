@@ -18,7 +18,9 @@ set:
 - the training algorithm (sgd, momentum, adam)
 - the loss function
 
-Examples:
+# Examples:
+
+## Function aproximation
 
 ``` Javascript
 const p = new MLPerceptron([[0], [1], [2], [3], [4]], [[1, 2, 3, 4, 5]], 5, 'sgd', 'sigmoid', 'linear', 'meanSquaredError', 0.25);
@@ -32,6 +34,7 @@ p.earlyStoppingTraining(2000, 0.000001, 0).then( (h) => {
 });
 ```
 
+_Result:_
 ```
 >>> Training stopped  [ 0.008052811957895756 ] [ 0.007291194051504135 ] [ 0.007092813495546579 ] 83
 >>> Prediction:  [ 0.9779470562934875 ]
@@ -40,6 +43,8 @@ p.earlyStoppingTraining(2000, 0.000001, 0).then( (h) => {
 >>> Prediction:  [ 4.014418601989746 ]
 >>> Prediction:  [ 4.788935661315918 ]
 ``` 
+
+## XOR
 
 ```Javascript
 const p2 = new MLPerceptron([[0,0], [0,1], [1,0], [1,1]], [[0,1,1,0]], 5, 'adam', 'sigmoid', 'sigmoid', 'meanSquaredError', 0.25);
@@ -50,6 +55,7 @@ p2.train(200, 0).then( (h) => {
 });
 ```
 
+_Result:_
 ```
 >>> epoch: 0
 >>> loss: 0.25319623947143555
