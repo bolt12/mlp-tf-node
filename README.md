@@ -23,9 +23,11 @@ set:
 ## Function aproximation
 
 ``` Javascript
-const p = new MLPerceptron([[0], [1], [2], [3], [4]], [[1, 2, 3, 4, 5]], 5, 'sgd', 'sigmoid', 'linear', 'meanSquaredError', 0.25);
+const p = new MLPerceptron([[0], [1], [2], [3], [4]], [[1, 2, 3, 4, 5]], 5, 
+                           'sgd', 'sigmoid', 'linear', 'meanSquaredError',
+                            0.25);
+
 p.earlyStoppingTraining(2000, 0.000001, 0).then( (h) => {
-  
   p.predict([[0]]);
   p.predict([[1]]);
   p.predict([[2]]);
@@ -34,7 +36,7 @@ p.earlyStoppingTraining(2000, 0.000001, 0).then( (h) => {
 });
 ```
 
-_Result:_
+*Result:*
 ```
 >>> Training stopped  [ 0.008052811957895756 ] [ 0.007291194051504135 ] [ 0.007092813495546579 ] 83
 >>> Prediction:  [ 0.9779470562934875 ]
@@ -47,7 +49,10 @@ _Result:_
 ## XOR
 
 ```Javascript
-const p2 = new MLPerceptron([[0,0], [0,1], [1,0], [1,1]], [[0,1,1,0]], 5, 'adam', 'sigmoid', 'sigmoid', 'meanSquaredError', 0.25);
+const p2 = new MLPerceptron([[0,0], [0,1], [1,0], [1,1]], [[0,1,1,0]], 5, 
+                            'adam', 'sigmoid', 'sigmoid', 'meanSquaredError', 
+                            0.25);
+                            
 p2.train(200, 0).then( (h) => {
   const conf = p2.confMatrix(p2.inputs, p2.targets);
   conf.print();
@@ -55,7 +60,7 @@ p2.train(200, 0).then( (h) => {
 });
 ```
 
-_Result:_
+*Result:*
 ```
 >>> epoch: 0
 >>> loss: 0.25319623947143555
