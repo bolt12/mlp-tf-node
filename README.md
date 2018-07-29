@@ -14,9 +14,9 @@ In this moment the MLP class is not very costumizable since you can only
 set:
 - the hidden layer activation function (sigmoid is the default)
 - the output layer activation function (linear is the default)
-- the learning rate ()
+- the learning rate (0.25)
 - the training algorithm (sgd, momentum, adam)
-- the loss function
+- the loss function (meanSquaredError)
 
 # Examples:
 
@@ -52,7 +52,7 @@ p.earlyStoppingTraining(2000, 0.000001, 0).then( (h) => {
 const p2 = new MLPerceptron([[0,0], [0,1], [1,0], [1,1]], [[0,1,1,0]], 5, 
                             'adam', 'sigmoid', 'sigmoid', 'meanSquaredError', 
                             0.25);
-                            
+
 p2.train(200, 0).then( (h) => {
   const conf = p2.confMatrix(p2.inputs, p2.targets);
   conf.print();
